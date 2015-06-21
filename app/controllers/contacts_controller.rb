@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
       email = params[:contact][:email]
       body = params[:contact][:comments]
       
-      Contact_mailer.contact_email(name, email, body).deliver
+      Contact_Mailer.contact_email(name, email, body).deliver
       
       flash[:success] = 'Message sent.'
       redirect_to new_contact_path
